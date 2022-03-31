@@ -6,10 +6,15 @@
 
 [Assembly language | Wikipedia](https://en.wikipedia.org/wiki/Assembly_language)
 
+[list of ressources around x86](https://stackoverflow.com/tags/x86/info) 🌟
+
 ##### ressources
 
-[x86-64 basics: registers, o
+[x86-64 basics: registers, instructions...](https://cs61.seas.harvard.edu/site/2018/Asm1/) ⭐️
 
+##### tools
+
+[Godbolt](https://godbolt.org/) 🌟
 
 ## Commands
 

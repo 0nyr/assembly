@@ -28,10 +28,27 @@ So the passage of the first 6 params using registers (which is obviously much fa
 
 That's why a program written like so:
 
-```x86-64
-(base) onyr@aezyr:~/Documents/code/assembly/function_calls$ gcc -O0 -o putchar putchar.s 
-(base) onyr@aezyr:~/Documents/code/assembly/function_calls$ ./putchar 
-Segmentation fault (core dumped)
+```shell
+.globl main
+main:
+    # prologue (enter new next AR)
+    push %rbp # save %rbp on the stack
+    mov %rsp, %rbp # define %rbp for the current function
+
+    # call sequence (caller cleans up stack - CDECL call convention)
+    # normally, putchar takes a single argument, so extra args won't be used
+    pushq   $104 
+    pushq   $103 
+    call    putchar # call putchar
+    addq    $16, %rsp # clean up stack (16 bytes as 2 extra args of 8 bytes each)
+  
+    # return 3
+    mov	$3, %rax
+  
+    # epilogue (leave AR)
+    pop %rbp # restore %rbp from the stack
+    ret # return to the caller (here the shell)
+
 ```
 
 Gives a *segfault...*
