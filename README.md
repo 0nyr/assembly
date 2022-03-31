@@ -6,6 +6,11 @@
 
 [Assembly language | Wikipedia](https://en.wikipedia.org/wiki/Assembly_language)
 
+##### ressources
+
+[x86-64 basics: registers, o
+
+
 ## Commands
 
 `gcc -S -O0 -o <output.s> <input.c>`: compile a C program to Assembly using `gcc`.
