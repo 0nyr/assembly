@@ -3,7 +3,7 @@ main:
     # prologue
     pushq %rbp # save %rbp on the stack
     movq %rsp, %rbp # define %rbp for the current function
-	subq    $8, %rsp # the problem comes from there
+	subq    $80, %rsp # the problem comes from there
 	movl $97, -4(%rbp)
 	movl $98, -12(%rbp)
 	movl $99, -20(%rbp)
