@@ -9,7 +9,7 @@ main:
     movb $98, -1(%rbp)
 
     # movsbq -1(%rbp), %rdi # 98 is 'b' in ASCII
-    movsbl  -1(%rbp), %edi
+    movsbq  -1(%rbp), %rdi
     mov $98, %rsi # 98 is 'b' in ASCII
     mov $99, %rdx # 99 is 'c' in ASCII
     mov $10, %rcx # 10 is '\n' in ASCII
