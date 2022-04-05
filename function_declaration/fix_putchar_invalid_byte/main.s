@@ -3,6 +3,7 @@ function15:
     # prologue
     pushq %rbp # save %rbp on the stack
     movq %rsp, %rbp # define %rbp for the current function
+	subq    $32, %rsp # add this expression to fix problem
 	movl %edi, -4(%rbp)
 	movl %esi, -8(%rbp)
 	movl %edx, -12(%rbp)
